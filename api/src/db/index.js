@@ -1,7 +1,9 @@
+const { join } = require('path')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 
-const adapter = new FileSync('api/src/db/db.json')
+
+const adapter = new FileSync(join(__dirname, 'db.json'))
 const db = low(adapter)
 
 const createPetModel = require('./pet')
